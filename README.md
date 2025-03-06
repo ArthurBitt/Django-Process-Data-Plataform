@@ -57,8 +57,8 @@ SLEEPING_PARAMS = '3,20,4' # Prevents concurrent tasks
 
 # EMAIL(Credentials must be requested from the admin)
 EMAIL_TO=
-SQAD_MAIL_TOKEN=
-ENDPOINT_SQAD_MAIL=
+MAIL_TOKEN=
+ENDPOINT_MAIL=
 ID_TEMPLATE_COMPLETED_WORKSHEET=
 
 # DATABASE CONFIG
