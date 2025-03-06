@@ -55,7 +55,7 @@ LIMIT_ROBOT=10 # Rate limit to process only 10 records at a time
 # SLEEPING PARAMS
 SLEEPING_PARAMS = '3,20,4' # Prevents concurrent tasks
 
-# EMAIL SQAD (Credentials must be requested from the admin)
+# EMAIL(Credentials must be requested from the admin)
 EMAIL_TO=
 SQAD_MAIL_TOKEN=
 ENDPOINT_SQAD_MAIL=
