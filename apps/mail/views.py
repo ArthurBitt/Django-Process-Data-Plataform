@@ -1,7 +1,7 @@
 from config.settings import (
     ID_TEMPLATE_COMPLETED_WORKSHEET,
     ENDPOINT_SQAD_MAIL,
-    SQAD_MAIL_TOKEN,
+    MAIL_TOKEN,
 )
 
 import requests
