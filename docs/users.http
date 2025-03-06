@@ -1,0 +1,67 @@
+#### Obter token JWT (login)
+#POST http://127.0.0.1:8000/token/
+#Content-Type: application/json
+#
+#{
+#    "email": "newuserexample.com",
+#    "password": "Newpassword123",
+#    "is_staff": "True"
+#}
+#
+#### Atualizar token JWT (refresh)
+#POST http://127.0.0.1:8000/token/refresh/
+#Content-Type: application/json
+#
+#{
+#    "refresh": "<refresh>"
+#}
+#
+
+### Cadastrar um novo usuário (signup-service)
+POST http://127.0.0.1:8000/users/signup-service/
+Content-Type: application/json
+
+{
+    "email": "newuser@example.com",
+    "password": "@Newpassword123",
+    "first_name": "New",
+    "last_name": "User"
+}
+
+### Login personalizado (login-service)
+POST http://127.0.0.1:8000/users/login-service/
+Content-Type: application/json
+
+{
+    "email": "newuser@example.com",
+    "password": "@Newpassword123"
+}
+
+### Listar todos os usuários (users-list-service) - Requer autenticação e permissão de staff/admin
+GET http://127.0.0.1:8000/users/users-list-service/
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+### Atualizar um usuário (user-update-service) - Requer autenticação e permissão de staff/admin
+PUT http://127.0.0.1:8000/users/user-update-service/<uuid>/
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+{
+    "email": "updateduser@example.com",
+    "first_name": "Updated",
+    "last_name": "User"
+}
+
+### Inativar um usuário (user-inactivate-service) - Requer autenticação e permissão de staff/admin
+DELETE http://127.0.0.1:8000/users/user-inactivate-service/<uuid>/
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+### Recuperar senha (recover_password-service)
+POST http://127.0.0.1:8000/users/recover_password-service/
+Content-Type: application/json
+
+{
+    "email": "user@example.com"
+}

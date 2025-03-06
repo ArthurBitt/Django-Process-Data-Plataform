@@ -1,0 +1,69 @@
+# Listar lotes em processamento
+GET http://localhost:8000/worksheets/list-worksheets-service/
+Authorization: Bearer <Token>
+###
+
+# Listar Linhas de uma Planilha
+GET http://localhost:8000/worksheets/list-worksheet-lines-service/<str:worksheet_id>/
+Authorization: Bearer <Token>
+###
+# Listar Linhas de uma Planilha - Filtro por Status (Opcional):
+GET http://localhost:8000/worksheets/list-worksheet-lines-service/<str:worksheet_id>/?status=5
+Authorization: Bearer <Token>
+###
+
+POST http://localhost:8000/worksheets/reprocess-worksheet-service/<str:worksheet_id>/
+Authorization: Bearer <Token>
+
+###
+# Reprocessar Linha (Em desenvolvimento)
+POST http://localhost:8000/worksheets/reprocess-line-service/<str:line_id>/
+Authorization: Bearer <Token>
+###
+
+# Download Worksheet Excel Report
+
+#curl -L -X GET "http://localhost:8000/worksheets/download-excel-report-service/<str:worksheet_id>/" \
+#  -H "Authorization: Bearer <Token>" \
+#  -o ~/Downloads/relatorio.xlsx
+
+GET http://localhost:8000/worksheets/download-excel-report-service/<str:worksheet_id>/
+Authorization: Bearer <Token>
+###
+
+###
+# Upload worksheet
+
+# curl -X POST "http://localhost:8000/worksheets/upload-service/"
+#  -H "Authorization: Bearer <Token>"
+#  -H "Content-Type: multipart/form-data"
+#  -F "file=@./caminho/para/arquivo.xlsx"
+#  -F "upload_type=tipo_de_upload"
+POST http://localhost:8000/worksheets/upload-service/
+Authorization: Bearer <Token>
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="arquivo.xlsx"
+
+< ./caminho/para/arquivo.xlsx
+--WebAppBoundary
+Content-Disposition: form-data; name="upload_type"
+
+tipo_de_upload
+--WebAppBoundary--
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
