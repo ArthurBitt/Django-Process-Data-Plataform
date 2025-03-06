@@ -14,10 +14,10 @@ def send_mail(
     template: str,
     context: dict,
     document=None,
-    email: str = "noreply@squadytecnologia.com.br",
+    email: str = "noreply@tech.com.br",
 ):
     try:
-        url = f"{ENDPOINT_SQAD_MAIL}/send/"
+        url = f"{ENDPOINT_MAIL}/send/"
 
         templates = {
             "completed_worksheet": {
@@ -33,7 +33,7 @@ def send_mail(
              existe nos templates cadastrados"
 
         headers = {
-            "Authorization": f"Bearer {SQAD_MAIL_TOKEN}",
+            "Authorization": f"Bearer {MAIL_TOKEN}",
         }
 
         file = None
